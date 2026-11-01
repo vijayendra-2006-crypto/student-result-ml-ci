@@ -25,6 +25,14 @@ def home():
     })
 
 
+# Practical-7: Health Check Endpoint
+@app.route("/health", methods=["GET"])
+def health():
+    return jsonify({
+        "status": "healthy"
+    }), 200
+
+
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.get_json(silent=True)
